@@ -1,9 +1,9 @@
-## Handwritten Numerical Digit Classification
+## Single Handwritten Numerical Digit Classification
 Image classification using Convolutional Neural Network, demonstrating inference pipeline with PyTorch.
 
 
 ## Project Overview
-- Task: Image Classification (from 0 to 9)
+- Task: Numerical Image Classification (from 0 to 9)
 - Model: Convolutional Neural Network (CNN)
 - Framework: PyTorch
 
@@ -21,7 +21,7 @@ Image classification using Convolutional Neural Network, demonstrating inference
 
 
 ## Inference
-- You may use: Kaggle Handwritten Number Digit dataset or any custom handwritten number image.
+- You may use: images from Kaggle Single Handwritten Number Digit dataset or any custom single-handwritten-number images.
 - Note: Input images are converted to grayscale and resized before inference.
 
 
