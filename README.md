@@ -23,9 +23,8 @@ Image classification using Convolutional Neural Network, demonstrating inference
 - ├─ 9/
 
 
-## Inference
-- A demonstraion of the model is produced at: https://huggingface.co/spaces/Fuyuki0312/ModelDetectingNumber-demo
-- Alternatively, you may use: images from Kaggle Single Handwritten Number Digit dataset or any custom single-handwritten-number images.
+## Demonstration
+- A demonstration of the model is produced at: https://huggingface.co/spaces/Fuyuki0312/ModelDetectingNumber-demo
 - Note: Input images are converted to grayscale and resized before inference and their background color should be white.
 
 
