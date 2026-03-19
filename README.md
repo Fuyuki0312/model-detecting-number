@@ -43,4 +43,3 @@ Numerical image classification using Convolutional Neural Network, illustrating 
 
 ## Possible Improvements
 - Expanding the dataset to include numerical images with diverse backgrounds (dark, textured, etc).
-- Applying background-related data augmentation techniques during training.
