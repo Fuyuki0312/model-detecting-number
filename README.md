@@ -3,7 +3,7 @@ A comparative study of attention-augmented CNN (CNNtention) and ResNet18 for han
 
 
 ## 1. Overview
-- Task: Comparing a CNNtention model with ResNet18 models and with other models in handwritten digit classification (from 0 to 9)
+- Task: Comparing 4 models: a non-attention, a CNNtention model, a ResNet18 model from scratch, a pretrained ResNet18 model in handwritten digit classification (from 0 to 9)
 - Model: Convolutional Neural Network (CNN)
 - Mechanism: Spatial Self-Attention (inspired by Transformer)
 
@@ -46,7 +46,7 @@ Some heavy transformations (e.g., random rotation, large scaling) were avoided t
 
 
 ## 4. Demonstration
-- A demonstration of the CNN model from scratch is produced at HuggingFace Space: https://huggingface.co/spaces/Fuyuki0312/CNN-model-built-from-scratch
+- A demonstration of the CNNtention model from scratch is produced at HuggingFace Space: https://huggingface.co/spaces/Fuyuki0312/CNNtention-in-handwritten-digit-classification
 - Or for the ResNet18 model: https://huggingface.co/spaces/Fuyuki0312/ResNet18-in-handwritten-digit-classification
 - The Space may need a few seconds to initialize if inactive. 
 - Note: Input image's background color should be white by default.  
