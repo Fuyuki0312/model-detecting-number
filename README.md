@@ -93,7 +93,7 @@ Some heavy transformations (e.g., random rotation, large scaling) were avoided t
 - Regarding the CNNtention model, this model's metrics also surpass the non-attention CNN model's ones, reaching remarkably higher test accuracy (97.15%), but still lower than the ResNet18 models' test accuracy. This gap, however, does not diminish the CNNtention model compared to ResNet18 models, but illustrates a trade-off. Built based-on a simple architecture of the non-attention CNN model where there are not many parameters, the CNNtention model requires much fewer computational resources and has its weights stored in a pth file with a much smaller size. Additionally, its model weights are stored in a much smaller file: the CNNtention's `ModelDetectingNumber.pth` is only 987 KB, whereas the ResNet18 models' file size is 131,169 KB (approximately 133x larger).  
 
 **Key Advantages of CNNtention compared to ResNet18 and non-attention CNN:**  
-- **27x smaller** weight size (987 KB vs 131,169 KB)
+- **Significantly smaller** weight size (987 KB vs 131,169 KB)
 - **3% accuracy improvement** over baseline CNN
 - **Lower computational requirements** - suitable for edge devices
 
