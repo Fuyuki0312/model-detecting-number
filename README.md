@@ -81,13 +81,16 @@ Some heavy transformations (e.g., random rotation, large scaling) were avoided t
 
 ### 5.4. Comparison
 
+![description](Images/ComparisonTable.jpg)
 
-- Thanks to being pretrained on large-scale datasets, the ResNet18 model required much fewer epochs (only 3) to train, despite taking insignificantly more time to train each epoch, which was 0.67 min/epoch. This model resulted in a considerably high test accuracy, being approximately higher than 99%, without the need of transforming data into grayscale.
-- The CNN model built from scratch, on the other hand, reached an acceptable test accuracy (94.14%), yet demanded many times more epochs (50 epochs), leading to longer training time. After data had been transformed into grayscale, this model was trained with a speed of roughly 0.4 min/epoch, achieving about 94% test accuracy.
-- A ResNet18 model with frozen backbone is not recommended because ~81% test accuracy cannot be considered satisfactory in handwritten digit classification. The model's backbone being frozen limited the model's ability to adapt the dataset, reducing the model's capability of understanding data's patterns.
-- Overall, the ResNet18 model outperforms the custom CNN model with noticeably less total time to train in this project, although ResNet18 model requires slightly more computational resoures.  
+- Thanks to being pretrained on large-scale datasets, the pretrained ResNet18 model required much fewer epochs (only 3) to train, despite taking insignificantly more time to train each epoch, which was 0.67 min/epoch. This model resulted in a considerably high test accuracy, being approximately higher than 99%, without the need of transforming data into grayscale. Similarly, the non-pretrained ResNet18 model shows a reliable metrics with slightly increased total training time.
+- The non-attention CNN model built from scratch, on the other hand, reached an acceptable test accuracy (94.14%), yet demanded many times more epochs (50 epochs), leading to longer training time. After data had been transformed into grayscale, this model was trained with a speed of roughly 0.4 min/epoch, achieving about 94% test accuracy.
+- Regarding the CNNtention model, this model's metrics also surpass the non-attention CNN model's ones, reaching remarkably higher test accuracy (97.15%), but still lower than the ResNet18 models' test accuracy. This gap, however, does not diminish the CNNtention model compared to ResNet18 models, but illustrates a trade-off. Built based-on a simple architecture of the non-attention CNN model where there are not many parameters, the CNNtention model requires much fewer computational resources and has its weights stored in a pth file with a much smaller size. Additionally, its model weights are stored in a much smaller file: the CNNtention's `ModelDetectingNumber.pth` is only 987 KB, whereas the ResNet18 models' file size is 131,169 KB (approximately 133x larger).  
 
-Note: The ResNet18 model with a frozen backbone as well as the relating graphs showing its metrics are not included in this repository, as it exhibited unstable training behavior and poor generalization.  
+  **Key Advantages of CNNtention compared to ResNet18 and non-attention CNN:**  
+- **27x smaller** weight size (987 KB vs 131,169 KB)
+- **3% accuracy improvement** over baseline CNN
+- **Lower computational requirements** - suitable for edge devices
 
 
 ## 6. How to use the models
