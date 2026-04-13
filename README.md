@@ -73,8 +73,8 @@ Some heavy transformations (e.g., random rotation, large scaling) were avoided t
 
 ### 5.3. Pretrained ResNet18
 - The model reached 99.62% test accuracy.  
-![description](Images/ResNetAccuracyCurve.jpg) ![description](Images/ResNetLossCurve.jpg)
-![description](Images/ResNetConfusionMatrix.jpg)
+![description](Images/PretrainedResNetAccuracyCurve.jpg) ![description](Images/PretrainedResNetLossCurve.jpg)
+![description](Images/PretrainedResNetConfusionMatrix.jpg)
 
 (The graphs collected metrics each epoch and since the ResNet18 model was trained on only 3 epochs, the "curves" appear to be quite linear)  
 - While ResNet18 performed effectively on the dataset with reliable metrics, it may not necessarily be consistent to correctly predict real-world handwritten digits. Therefore, these metrics should be interpreted with caution.
