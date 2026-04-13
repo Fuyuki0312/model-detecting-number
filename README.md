@@ -1,11 +1,11 @@
 # Model Comparison In Handwritten Digit Classification  
-A comparative study of CNN and ResNet18 for handwritten digit classification with detailed evaluation and analysis.
+A comparative study of attention-augmented CNN (CNNtention) and ResNet18 for handwritten digit classification with detailed evaluation and analysis.
 
 
 ## Overview
-- Task: Comparing a CNN model built from scratch and a ResNet18 model in handwritten digit classification (from 0 to 9)
+- Task: Comparing a CNNtention model with ResNet18 models and with other models in handwritten digit classification (from 0 to 9)
 - Model: Convolutional Neural Network (CNN)
-- Goal: Building a CNN model from scratch, comparing the model with ResNet18 on a custom dataset and implementing an interactive demonstration  
+- Mechanism: Transformer Attention  
 
 
 ## Why choosing CNN
@@ -13,7 +13,7 @@ CNN models are a strong baseline in image classification because of their abilit
 
 In contrast, Vision Transformer (ViT) models, while outperform CNN models thanks to global dependencies, require significantly more data and computational resources to train effectively.  
 
-Given the limited size of the dataset in this project, CNN is considered a more suitable and practical choice.  
+Given the limited size of the dataset in this project, CNN is considered a more suitable and practical choice. However, To improve performance and to inherit advantages of ViT, I built a attention-augmented CNN model.  
 
 
 ## Demonstration
@@ -27,16 +27,20 @@ Given the limited size of the dataset in this project, CNN is considered a more 
 ## Metrics
 
 ### Non-attention CNN model built from scratch
-- The model reached approximately 94% test accuracy.  
+- The model reached 94.14% test accuracy.  
 
 ![description](Images/CNNAccuracyCurve.jpg) ![description](Images/CNNLossCurve.jpg)
 ![description](Images/CNNConfusionMatrix.jpg)  
 (Confusion matrix collected model's prediction during validation after finishing training)
 - The model sometimes confuses digits like 0, 3, 6, 8, and 9 due to similar rounded shapes and different handwritting styles.  
 
+### CNNtention
+- The CNNtention model was built based on Non-attention CNN model's architecture but with attention mechanisms, reaching 97.15% test accuracy.
+![description](Images/CNNtentionAccuracyCurve.jpg) ![description](Images/CNNtentionLossCurve.jpg)
+![description](Images/CNNtentionConfusionMatrix.jpg)  
 
 ### Pretrained ResNet18
-- The model reached approximately 99% test accuracy.  
+- The model reached 99.62% test accuracy.  
 ![description](Images/ResNetAccuracyCurve.jpg) ![description](Images/ResNetLossCurve.jpg)
 ![description](Images/ResNetConfusionMatrix.jpg)
 
