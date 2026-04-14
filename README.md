@@ -17,7 +17,7 @@ I adapt their approach of integrating self-attention mechanisms into CNN archite
 ### 2.2. Why choosing CNN
 CNN models are a strong baseline in image classification because of their ability to learn local spacial features effectively, and perform sufficiently even with a small dataset.  
 
-In contrast, Vision Transformer (ViT) models, while outperform CNN models thanks to global dependencies, require significantly more data and computational resources to be trained effectively.  
+In contrast, Vision Transformer (ViT) models, while outperform CNN models thanks to global dependencies, require significantly more data and computational resources to train effectively.  
 
 Given the limited size of the dataset in this project, CNN is considered a more suitable and practical choice. However, To improve performance and to inherit advantages of ViT, I built a attention-augmented CNN model.  
 
@@ -90,7 +90,7 @@ Some heavy transformations (e.g., random rotation, large scaling) were avoided t
 
 - Thanks to being pretrained on large-scale datasets, the pretrained ResNet18 model required much fewer epochs (only 3) to train, despite taking insignificantly more time to train each epoch, which was 0.67 min/epoch. This model resulted in a considerably high test accuracy, being approximately higher than 99%, without the need of transforming data into grayscale. Similarly, the non-pretrained ResNet18 model shows reliable metrics with slightly increased total training time.
 - The non-attention CNN model built from scratch, on the other hand, reached an acceptable test accuracy (94.14%), yet demanded many times more epochs (50 epochs), leading to longer training time. After data had been transformed into grayscale, this model was trained with a speed of roughly 0.4 min/epoch, achieving about 94% test accuracy.
-- Regarding the CNNtention model, this model's metrics also surpass the non-attention CNN model's ones, reaching remarkably higher test accuracy (97.15%), but still lower than the ResNet18 models' test accuracy. This gap, however, does not diminish the CNNtention model compared to ResNet18 models, but illustrates a trade-off. Built based-on a simple architecture of the non-attention CNN model where there are not many parameters, the CNNtention model requires much fewer computational resources and has its weights stored in a pth file with a much smaller size. Additionally, its model weights are stored in a much smaller file: the CNNtention's `ModelDetectingNumber.pth` is only 987 KB, whereas the ResNet18 models' file size is 131,169 KB.  
+- Regarding the CNNtention model, this model's metrics also surpass the non-attention CNN model's ones, reaching remarkably higher test accuracy (97.15%), but still lower than the ResNet18 models' test accuracy. This gap, however, does not diminish the CNNtention model compared to ResNet18 models, but illustrates a trade-off. Built based-on a simple architecture of the non-attention CNN model where there are not many parameters, the CNNtention model requires much fewer computational resources and has its weights stored in `ModelDetectingNumber.pth` with a much smaller size. Additionally, its model weights are stored in a much smaller file: the CNNtention's `ModelDetectingNumber.pth` is only 987 KB, whereas the ResNet18 models' file size is 131,169 KB.  
 
 **Key Advantages of CNNtention compared to ResNet18 and non-attention CNN:**  
 - **Significantly smaller** weight size (987 KB vs 131,169 KB)
