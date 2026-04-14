@@ -64,12 +64,12 @@ Some heavy transformations (e.g., random rotation, large scaling) were avoided t
 - The model sometimes confuses digits like 0, 3, 6, 8, and 9 due to similar rounded shapes and different handwritting styles.  
 
 ### 5.2. CNNtention
-- The CNNtention model was built based on Non-attention CNN model's architecture but with attention mechanisms, reaching 97.15% test accuracy.  
+- The CNNtention model was built based on the non-attention CNN model's architecture but with attention mechanisms, reaching 97.15% test accuracy.  
   
 ![description](Images/CNNtentionAccuracyCurve.jpg) ![description](Images/CNNtentionLossCurve.jpg)
 ![description](Images/CNNtentionConfusionMatrix.jpg)  
 
-- The CNNtention model effectively classifies nearly all labels compared to the Non-attention CNN model above, though the CNNtention model still sometimes misclassifies 9 to 8. This may be due to the fact that the number of image 9 is smaller than the number of other images in the custom dataset (section 3).
+- The CNNtention model classifies nearly all labels more effectively compared to the Non-attention CNN model above, though the CNNtention model still sometimes misclassifies 9 to 8. This may be due to the fact that the number of image 9 is smaller than the number of other images in the custom dataset (section 3).
 
 ### 5.3. ResNet18 from scratch
 - The model reached 98.99% test accuracy.
@@ -88,14 +88,14 @@ Some heavy transformations (e.g., random rotation, large scaling) were avoided t
 
 ![description](Images/ComparisonTable.jpg)
 
-- Thanks to being pretrained on large-scale datasets, the pretrained ResNet18 model required much fewer epochs (only 3) to train, despite taking insignificantly more time to train each epoch, which was 0.67 min/epoch. This model resulted in a considerably high test accuracy, being approximately higher than 99%, without the need of transforming data into grayscale. Similarly, the non-pretrained ResNet18 model shows a reliable metrics with slightly increased total training time.
+- Thanks to being pretrained on large-scale datasets, the pretrained ResNet18 model required much fewer epochs (only 3) to train, despite taking insignificantly more time to train each epoch, which was 0.67 min/epoch. This model resulted in a considerably high test accuracy, being approximately higher than 99%, without the need of transforming data into grayscale. Similarly, the non-pretrained ResNet18 model shows reliable metrics with slightly increased total training time.
 - The non-attention CNN model built from scratch, on the other hand, reached an acceptable test accuracy (94.14%), yet demanded many times more epochs (50 epochs), leading to longer training time. After data had been transformed into grayscale, this model was trained with a speed of roughly 0.4 min/epoch, achieving about 94% test accuracy.
 - Regarding the CNNtention model, this model's metrics also surpass the non-attention CNN model's ones, reaching remarkably higher test accuracy (97.15%), but still lower than the ResNet18 models' test accuracy. This gap, however, does not diminish the CNNtention model compared to ResNet18 models, but illustrates a trade-off. Built based-on a simple architecture of the non-attention CNN model where there are not many parameters, the CNNtention model requires much fewer computational resources and has its weights stored in a pth file with a much smaller size. Additionally, its model weights are stored in a much smaller file: the CNNtention's `ModelDetectingNumber.pth` is only 987 KB, whereas the ResNet18 models' file size is 131,169 KB.  
 
 **Key Advantages of CNNtention compared to ResNet18 and non-attention CNN:**  
 - **Significantly smaller** weight size (987 KB vs 131,169 KB)
 - **3% accuracy improvement** over baseline CNN
-- **Lower computational requirements** - suitable for edge devices
+- **Lower computational requirements** - suitable for low-end devices
 
 
 ## 6. How to use the models
