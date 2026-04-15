@@ -3,7 +3,7 @@ A comparative study of attention-augmented Convolutional Neural Network (CNNtent
 
 
 ## 1. Overview
-- Task: Comparing 4 models: a non-attention CNN model, a CNNtention model and a ResNet18 model from scratch in handwritten digit classification (from 0 to 9)
+- Task: Comparing 4 models: a non-attention CNN model, two CNNtention models (trained on two different image sizes) and a ResNet18 model from scratch in handwritten digit classification (from 0 to 9)
 - Model: Convolutional Neural Network (CNN)
 - Mechanism: Spatial Self-Attention (inspired by Transformer)
 
@@ -36,7 +36,7 @@ The dataset was manually inspected and cleaned to improve quality:
 - Filtered out images where digits are not clearly visible
 
 ### 3.2. Data Characteristics
-- Image size: 90×140
+- Image size: 90×140 (can be resized to 45x70 to reduce total training time)
 - Includes variations in handwriting styles and stroke thickness
 - There is a number of digits which are not centered and have various size
 - Some digits are visually similar (e.g., 0, 6, 8, 9), which introduces ambiguity
@@ -65,8 +65,10 @@ Some heavy transformations (e.g., random rotation, large scaling) were avoided t
 
 ### 5.2. CNNtention
 
-#### 5.2.1. CNNtention on images of 45x90 size
-- The CNNtention model was built based on the non-attention CNN model's architecture but with attention mechanisms, reaching 97.15% test accuracy.  
+#### 5.2.1. CNNtention on images of 90x140 size (original size)
+
+#### 5.2.2. CNNtention on images of 45x90 size (resized)
+- This CNNtention model was built based on the non-attention CNN model's architecture but with attention mechanisms, reaching 97.15% test accuracy.  
   
 ![description](Images/CNNtentionAccuracyCurve.jpg) ![description](Images/CNNtentionLossCurve.jpg)
 ![description](Images/CNNtentionConfusionMatrix.jpg)  
