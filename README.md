@@ -78,7 +78,7 @@ Some heavy transformations (e.g., random rotation, large scaling) were avoided t
 ![description](Images/45x90CNNtentionAccuracyCurve.jpg) ![description](Images/45x90CNNtentionLossCurve.jpg)
 ![description](Images/45x90CNNtentionConfusionMatrix.jpg)  
 
-- This 45x70 CNNtention model classifies nearly all labels more effectively compared to the Non-attention CNN model (section 5.1), though this CNNtention model still sometimes misclassifies 9 to 8. This may be due to the fact that the number of image 9 is smaller than the number of other images in the custom dataset (section 3) and the fact that images are resized to 45x70, reducing images' information four times.
+- The two CNNtention models classify nearly all labels more effectively compared to the Non-attention CNN model (section 5.1), though these CNNtention models still sometimes misclassify 9 to 8. This may be due to the fact that the number of image 9 is smaller than the number of other images in the custom dataset (section 3).
 
 ### 5.3. ResNet18 from scratch
 - The model reached 98.99% test accuracy.
@@ -93,12 +93,13 @@ Some heavy transformations (e.g., random rotation, large scaling) were avoided t
 
 - Thanks to residual architecture and a lot more layers and parameters, the ResNet18 model resulted in a considerably high test accuracy, being 98.99%, without the need of transforming data into grayscale. Similarly, the non-pretrained ResNet18 model shows reliable metrics with slightly increased total training time.
 - The non-attention CNN model built from scratch, on the other hand, reached an acceptable test accuracy (94.14%), yet demanded many times more epochs (50 epochs), leading to longer training time. After data had been transformed into grayscale, this model was trained with a speed of roughly 0.4 min/epoch, achieving about 94% test accuracy.
-- Regarding the CNNtention model, this model's metrics also surpass the non-attention CNN model's ones, reaching remarkably higher test accuracy (97.15%), but still lower than the ResNet18 models' test accuracy. This gap, however, does not diminish the CNNtention model compared to ResNet18 models, but illustrates a trade-off. Built based-on a simple architecture of the non-attention CNN model where there are not many parameters, the CNNtention model requires much fewer computational resources and has its weights stored in `ModelDetectingNumber.pth` with a much smaller size. Particularly, its model weights are stored in a much smaller file: the CNNtention's `ModelDetectingNumber.pth` is only 987 KB, whereas the ResNet18 models' file size is 131,169 KB.  
+- Regarding the CNNtention models, these models' metrics also surpass the non-attention CNN model's ones, reaching remarkably higher test accuracy (96.97% and 97.15%), but still lower than the ResNet18 models' test accuracy. This gap, however, does not diminish the CNNtention models compared to ResNet18 models, but illustrates a trade-off. Built based-on a simple architecture of the non-attention CNN model where there are not many parameters, the CNNtention model requires much fewer computational resources and has its weights stored in `ModelDetectingNumber.pth` with a much smaller size. Particularly, its model weights are stored in a much smaller file: the CNNtention's `ModelDetectingNumber.pth` is only 987 KB, whereas the ResNet18 models' file size is 131,169 KB.
+- Among the two CNNtention models, although there were differences in image size, the final metrics of these ones is quite alike. Reducing image size not only helps the CNNtention model to train much faster, but also improve the model's metrics by a small amount. Even though reducing image size may prevent the 45x70 model to fully observe images, it accidentally prevents the model from "wandering" around unimportant areas in images.
 
-**Key Advantages of CNNtention compared to ResNet18 and non-attention CNN:**  
+**Key Advantages of CNNtention compared to ResNet18 and non-attention CNN in this project:**  
 - **Significantly smaller** weight size (987 KB vs 131,169 KB)
 - **3% accuracy improvement** over baseline CNN
-- **Lower computational requirements** - suitable for low-end devices
+- **Lower computational requirements on small-resized images** - suitable for low-end devices
 
 
 ## 6. How to use the models
