@@ -66,7 +66,7 @@ Some heavy transformations (e.g., random rotation, large scaling) were avoided t
 ### 5.2. CNNtention
 
 #### 5.2.1. CNNtention on images of size 90x140 (original size)
-- This CNNtention model was built based on the non-attention CNN model's architecture but with attention mechanisms.
+- This CNNtention model was built based on the non-attention CNN model's architecture but with attention mechanisms, reaching 96.97% test accuracy.
 
 ![description](Images/90x140CNNtentionAccuracyCurve.jpg) ![description](Images/90x140CNNtentionLossCurve.jpg)
 ![description](Images/90x140CNNtentionConfusionMatrix.jpg)  
